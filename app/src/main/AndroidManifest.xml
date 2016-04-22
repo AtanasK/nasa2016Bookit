@@ -17,18 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DiscoverActivity"
-            android:label="@string/title_activity_discover"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.bookitfava.nasaspaceapps.moonchaser.MainActivity" />
-        </activity>
         <activity android:name=".MessageActivity" />
-        <activity android:name=".StoryDiscoverActivity" />
-        <activity android:name=".UserMessagesActivity"></activity>
+        <activity android:name=".StoryActivity" />
+        <activity android:name=".ReceiveMessageActivity" />
+        <activity android:name=".DiscoverActivity"></activity>
     </application>
 
 </manifest>
