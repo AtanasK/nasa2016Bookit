@@ -1,5 +1,7 @@
 package com.bookitfava.nasaspaceapps.moonchaser;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -27,7 +29,9 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story_discover);
 
-        stories = new Story[]{new Story(), new Story(), new Story()};
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.themoon);
+
+        stories = new Story[]{new Story(bitmap, "Proben tekst"), new Story(bitmap, "Proben tekst 2"), new Story(bitmap, "Proben tekst 3")};
 
         Random rand = new Random();
         int storyPicker = rand.nextInt(stories.length); // Picknavme story
@@ -40,6 +44,11 @@ public class StoryActivity extends AppCompatActivity {
         secondText = (TextView) findViewById(R.id.secondText);
         // done so iniciranje
 
+        // setiraj gi views
+        Story chosenOne = stories[storyPicker];
+
+        firstImage.setImageBitmap(chosenOne.getFirstImage());
+        firstText.setText(chosenOne.getFirstText());
 
     }
 
