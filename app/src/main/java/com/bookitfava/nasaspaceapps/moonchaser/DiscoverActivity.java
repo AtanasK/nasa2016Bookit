@@ -9,6 +9,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,10 +25,10 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discover);
 
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         cdv = new CustomDrawableView(this);
+        setContentView(R.layout.activity_discover);
     }
 
     @Override
@@ -46,7 +47,9 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
 
     @Override
     protected void onStop() {
-        sensorManager.unregisterListener(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+            sensorManager.unregisterListener(this);
+        }
         super.onStop();
     }
 
