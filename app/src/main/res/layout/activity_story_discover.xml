@@ -48,18 +48,17 @@
         android:text="Back" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Share"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="Share" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="More"
-        android:id="@+id/button2"
-        android:layout_gravity="right|bottom" />
-
+        android:layout_gravity="right|bottom"
+        android:text="More" />
 
 </FrameLayout>
