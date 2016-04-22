@@ -16,7 +16,8 @@
         android:ems="10"
         android:id="@+id/etMessage"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:elevation="6dp" />
 
     <Button
         android:layout_width="wrap_content"
