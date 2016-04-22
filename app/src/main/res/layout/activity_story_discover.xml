@@ -33,9 +33,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
+                android:background="#ffffff"
                 android:elevation="6dp"
                 android:padding="10dp"
-                android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ImageView
@@ -51,8 +51,8 @@
                 android:layout_margin="3dp"
                 android:elevation="6dp"
                 android:padding="10dp"
-                android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
+
 
         </LinearLayout>
     </ScrollView>

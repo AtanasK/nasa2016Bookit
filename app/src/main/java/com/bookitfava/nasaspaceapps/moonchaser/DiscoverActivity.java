@@ -12,7 +12,5 @@ public class DiscoverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover);
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-
     }
 }
