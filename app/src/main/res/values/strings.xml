@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Moon Chaser</string>
+    <string name="title_activity_discover">DiscoverActivity</string>
 </resources>
