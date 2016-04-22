@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +25,8 @@ public class StoryActivity extends AppCompatActivity {
     // vtor pasus
     TextView secondText;
 
+    public static Random rand = new Random();
+
     private Story[] stories;
 
     @Override
@@ -31,15 +34,20 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story_discover);
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.themoon);
+        Bitmap moonmon = BitmapFactory.decodeResource(getResources(), R.drawable.moonmon);
+        Bitmap maps = BitmapFactory.decodeResource(getResources(), R.drawable.maps);
+        Bitmap fullmoonimg = BitmapFactory.decodeResource(getResources(), R.drawable.fullmoonimg);
+        Bitmap newmoon = BitmapFactory.decodeResource(getResources(), R.drawable.newmoon);
 
-        stories = new Story[]{new Story(bitmap, "Proben tekst"), new Story(bitmap, "Proben tekst 2"), new Story(bitmap, "Proben tekst 3")};
-
+        stories = new Story[]{
+                new Story(moonmon, "The moon goes around the Earth\nwith around 3700km per hour.", maps, "That's like going from Europe to the US in less then 2 hours.\n" +
+                        "That's a lot!"),
+                new Story(fullmoonimg, "When the moon is behind the Earth it is a full circle, that is called a full moon!", newmoon, "When the moon is in front of the Earth, we can't see it. That is called a new moon!")
+        };
 
         // inicirame sho e sho
         firstImage = (ImageView) findViewById(R.id.firstImage);
         secondImage = (ImageView) findViewById(R.id.secondImage);
-
         firstText = (TextView) findViewById(R.id.firstText);
         secondText = (TextView) findViewById(R.id.secondText);
         // done so iniciranje
@@ -51,7 +59,6 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     public Story generateNewStory() {
-        Random rand = new Random();
         int storyPicker = rand.nextInt(stories.length); // Picknavme story
 
         return stories[storyPicker];
@@ -60,6 +67,9 @@ public class StoryActivity extends AppCompatActivity {
     public void setNewStory(Story newStory) {
         firstImage.setImageBitmap(newStory.getFirstImage());
         firstText.setText(newStory.getFirstText());
+        Log.v("OVDEDEBUG", newStory.getSecondText());
+        secondImage.setImageBitmap(newStory.getSecondImage());
+        secondText.setText(newStory.getSecondText());
     }
 
     public void onClickBack(View view) {

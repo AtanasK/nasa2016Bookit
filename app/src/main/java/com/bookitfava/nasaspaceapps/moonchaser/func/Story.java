@@ -9,23 +9,16 @@ import android.widget.TextView;
 public class Story {
     private Bitmap image;
     private String text;
-    private boolean isDouble;
     private Bitmap secondImage;
     private String secondText;
+    private boolean isDouble;
     private boolean isSeen;
 
-    public Story(Bitmap image, String text) {
+    public Story(Bitmap image, String text, Bitmap second, String vtor) {
         this.image = image;
         this.text = text;
-        isDouble = false;
-        isSeen = false;
-    }
-
-    public Story(Bitmap image, String text, Bitmap image2, String text2) {
-        this.image = image;
-        this.text = text;
-        secondImage = image2;
-        secondText = text2;
+        secondImage = second;
+        secondText = vtor;
         isDouble = true;
         isSeen = false;
     }
@@ -34,16 +27,16 @@ public class Story {
         return image;
     }
 
-    public void setFirstImage(Bitmap image) {
-        this.image = image;
-    }
-
     public Bitmap getSecondImage() {
         return secondImage;
     }
 
-    public void setSecondImage(Bitmap image) {
-        secondImage = image;
+    public String getSecondText() {
+        return secondText;
+    }
+
+    public void setFirstImage(Bitmap image) {
+        this.image = image;
     }
 
     public String getFirstText() {
@@ -52,14 +45,6 @@ public class Story {
 
     public void setFirstText(String text) {
         this.text = text;
-    }
-
-    public String getSecondText() {
-        return secondText;
-    }
-
-    public void setSecondText(String text) {
-        secondText = text;
     }
 
     public boolean isSeen() {

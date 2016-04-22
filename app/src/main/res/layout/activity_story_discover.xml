@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
-        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -24,8 +20,8 @@
 
             <ImageView
                 android:id="@+id/firstImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -41,7 +37,7 @@
             <ImageView
                 android:id="@+id/secondImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -49,38 +45,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
+                android:layout_marginBottom="100dp"
+                android:background="#ffffff"
                 android:elevation="6dp"
                 android:padding="10dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
+            <TextView
+                android:id="@+id/random"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="" />
 
         </LinearLayout>
     </ScrollView>
-
 
     <Button
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_gravity="left|bottom"
         android:elevation="6dp"
-        android:text="Back"
-        android:onClick="onClickBack" />
+        android:onClick="onClickBack"
+        android:text="Back" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|bottom"
-        android:text="Share"
-        android:onClick="onClickShare" />
+        android:onClick="onClickShare"
+        android:text="Share" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_gravity="right|bottom"
-        android:text="More"
-        android:onClick="onClickMore" />
+        android:onClick="onClickMore"
+        android:text="More" />
 
 </FrameLayout>
