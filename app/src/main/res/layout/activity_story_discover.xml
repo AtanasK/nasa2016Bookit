@@ -64,20 +64,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|bottom"
         android:elevation="6dp"
-        android:text="Back" />
+        android:text="Back"
+        android:onClick="onClickBack" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:text="Share" />
+        android:text="Share"
+        android:onClick="onClickShare" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
-        android:text="More" />
+        android:text="More"
+        android:onClick="onClickMore" />
 
 </FrameLayout>

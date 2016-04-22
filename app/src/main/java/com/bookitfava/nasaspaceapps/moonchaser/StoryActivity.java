@@ -1,9 +1,11 @@
 package com.bookitfava.nasaspaceapps.moonchaser;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,8 +35,6 @@ public class StoryActivity extends AppCompatActivity {
 
         stories = new Story[]{new Story(bitmap, "Proben tekst"), new Story(bitmap, "Proben tekst 2"), new Story(bitmap, "Proben tekst 3")};
 
-        Random rand = new Random();
-        int storyPicker = rand.nextInt(stories.length); // Picknavme story
 
         // inicirame sho e sho
         firstImage = (ImageView) findViewById(R.id.firstImage);
@@ -45,12 +45,35 @@ public class StoryActivity extends AppCompatActivity {
         // done so iniciranje
 
         // setiraj gi views
-        Story chosenOne = stories[storyPicker];
-
-        firstImage.setImageBitmap(chosenOne.getFirstImage());
-        firstText.setText(chosenOne.getFirstText());
+        Story chosenOne = generateNewStory();
+        setNewStory(chosenOne);
 
     }
 
+    public Story generateNewStory() {
+        Random rand = new Random();
+        int storyPicker = rand.nextInt(stories.length); // Picknavme story
+
+        return stories[storyPicker];
+    }
+
+    public void setNewStory(Story newStory) {
+        firstImage.setImageBitmap(newStory.getFirstImage());
+        firstText.setText(newStory.getFirstText());
+    }
+
+    public void onClickBack(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickShare(View view) {
+        // TODO ovde
+    }
+
+    public void onClickMore(View view) {
+        Story story = generateNewStory();
+        setNewStory(story);
+    }
 
 }
