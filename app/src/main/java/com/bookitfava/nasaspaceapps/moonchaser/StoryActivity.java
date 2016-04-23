@@ -1,14 +1,17 @@
 package com.bookitfava.nasaspaceapps.moonchaser;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 import com.bookitfava.nasaspaceapps.moonchaser.func.Story;
 
@@ -58,6 +61,7 @@ public class StoryActivity extends AppCompatActivity {
 
     }
 
+
     public Story generateNewStory() {
         int storyPicker = rand.nextInt(stories.length); // Picknavme story
 
@@ -78,7 +82,29 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     public void onClickShare(View view) {
-        // TODO ovde
+        try {
+            // TODO: This part does not work properly based on my test
+            Intent fbIntent = new Intent(Intent.ACTION_SEND);
+            fbIntent.setType("text/plain");
+            fbIntent.putExtra(Intent.EXTRA_TEXT, "Did you know: " + firstText);
+            fbIntent.putExtra(Intent.EXTRA_STREAM, "www.example.com");
+            fbIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+            fbIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+            fbIntent.setComponent(new ComponentName("com.facebook.katana",
+                    "com.facebook.composer.shareintent.ImplicitShareIntentHandler"));
+
+            startActivity(fbIntent);
+            return;
+        } catch (Exception e) {
+            // User doesn't have Facebook app installed. Try sharing through browser.
+        }
+
+        // If we failed (not native FB app installed), try share through SEND
+        String sharerUrl = "https://www.facebook.com/sharer/sharer.php?u=" + "example.com&t=BookItToTheMoon";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(sharerUrl));
+        startActivity(i);
     }
 
     public void onClickMore(View view) {
