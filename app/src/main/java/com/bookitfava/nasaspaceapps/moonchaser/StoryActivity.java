@@ -84,7 +84,6 @@ public class StoryActivity extends AppCompatActivity {
 
     public void onClickShare(View view) {
         try {
-            // TODO: This part does not work properly based on my test
             Intent fbIntent = new Intent(Intent.ACTION_SEND);
             fbIntent.setType("text/plain");
             fbIntent.putExtra(Intent.EXTRA_TEXT, "Did you know: " + firstText);
