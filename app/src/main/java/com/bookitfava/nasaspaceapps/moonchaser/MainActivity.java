@@ -14,9 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ImageView logo = (ImageView)findViewById(R.id.ivLogo);
-        Bitmap logoImage = BitmapFactory.decodeResource(getResources(), R.drawable.themoon);
+        Bitmap logoImage = BitmapFactory.decodeResource(getResources(), R.drawable.ful);
         logo.setImageBitmap(logoImage);
     }
 
