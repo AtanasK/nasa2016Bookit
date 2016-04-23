@@ -26,10 +26,12 @@ public class ReceiveMessageActivity extends AppCompatActivity {
     public void bBackClick(View view) {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
+        onStop();
     }
 
     public void bRespondClick(View view) {
         Intent response = new Intent(this, MessageActivity.class);
         startActivity(response);
+        onStop();
     }
 }
