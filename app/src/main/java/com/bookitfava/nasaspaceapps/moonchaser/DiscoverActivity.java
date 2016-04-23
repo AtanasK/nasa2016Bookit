@@ -26,6 +26,7 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
     public class MyView extends SurfaceView implements Runnable {
 
         Bitmap themoon;
+        Bitmap background;
         SurfaceHolder holder;
         public Thread thread;
         boolean isRunning;
@@ -41,7 +42,8 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
             x = 0;
             y = 0;
             z = 0;
-            themoon = BitmapFactory.decodeResource(context.getResources(), R.drawable.themoon);
+            themoon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ful);
+            background = BitmapFactory.decodeResource(context.getResources(), R.drawable.background);
             thread.start();
         }
 
@@ -53,8 +55,8 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
                 Canvas canvas = holder.lockCanvas();
                 if (canvas == null)
                     continue;
-                canvas.drawColor(Color.BLACK);
-                canvas.drawBitmap(themoon, x, y + 5, null);
+                canvas.drawBitmap(background, 0, 0, null);
+                canvas.drawBitmap(themoon, -x, y , null);
                 holder.unlockCanvasAndPost(canvas);
             }
         }
