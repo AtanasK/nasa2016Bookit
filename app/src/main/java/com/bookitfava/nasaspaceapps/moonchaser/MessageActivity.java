@@ -24,6 +24,7 @@ public class MessageActivity extends AppCompatActivity {
     public void bBackClick(View view) {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
+        onStop();
     }
 
     public void bSendClick(View view) {
@@ -35,5 +36,6 @@ public class MessageActivity extends AppCompatActivity {
         bundle.putString("message", messageText);
         discover.putExtras(bundle);
         startActivity(discover);
+        onStop();
     }
 }

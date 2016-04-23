@@ -65,6 +65,7 @@ public class StoryActivity extends AppCompatActivity {
     public void onClickBack(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        onStop();
     }
 
     public void onClickShare(View view) {

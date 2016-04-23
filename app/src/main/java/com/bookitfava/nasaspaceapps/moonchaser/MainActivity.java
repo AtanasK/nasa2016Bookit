@@ -20,13 +20,15 @@ public class MainActivity extends AppCompatActivity {
         logo.setImageBitmap(logoImage);
     }
 
-    public void gotoStory(View view) {
-        Intent intent = new Intent(this, StoryActivity.class);
+    public void bDiscoverClick(View view) {
+        Intent intent = new Intent(this, DiscoverActivity.class);
         startActivity(intent);
+        onStop();
     }
 
     public void bShareClick(View view) {
         Intent message = new Intent(this, MessageActivity.class);
         startActivity(message);
+        onStop();
     }
 }
