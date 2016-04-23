@@ -22,7 +22,7 @@
             <ImageView
                 android:id="@+id/firstImage"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -38,7 +38,7 @@
             <ImageView
                 android:id="@+id/secondImage"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -69,8 +69,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:bottomRightRadius="50dp"
         android:layout_gravity="left|bottom"
+        android:bottomRightRadius="50dp"
         android:elevation="6dp"
         android:onClick="onClickBack"
         android:text="Back" />
