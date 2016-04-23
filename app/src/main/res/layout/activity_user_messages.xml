@@ -7,12 +7,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ReceiveMessageActivity">
+    tools:context=".ReceiveMessageActivity"
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="#AAA"
+        android:gravity="center"
         android:id="@+id/tvFrom"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -23,6 +26,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvMessage"
+        android:background="#AAA"
+        android:gravity="center"
         android:lines="3"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

@@ -86,5 +86,4 @@ public class StoryActivity extends AppCompatActivity {
         Story story = generateNewStory();
         setNewStory(story);
     }
-
 }

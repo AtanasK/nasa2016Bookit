@@ -7,37 +7,42 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.bookitfava.nasaspaceapps.moonchaser.MessageActivity">
+    tools:context="com.bookitfava.nasaspaceapps.moonchaser.MessageActivity"
+    android:background="@drawable/background">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/etMessage"
-        android:layout_centerVertical="true"
+        android:elevation="6dp"
+        android:background="#AAA"
+        android:gravity="center"
+        android:layout_above="@+id/bBack"
         android:layout_centerHorizontal="true"
-        android:elevation="6dp" />
+        android:lines="5"
+        android:layout_margin="10dp"
+        android:foregroundGravity="center_vertical|center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
         android:text="BACK"
         android:id="@+id/bBack"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="bBackClick" />
+        android:onClick="bBackClick"
+        android:layout_above="@+id/bSend"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
         android:text="SEND"
         android:id="@+id/bSend"
+        android:onClick="bSendClick"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="bSendClick" />
+        android:layout_alignRight="@+id/bBack"
+        android:layout_alignEnd="@+id/bBack" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -45,6 +50,8 @@
         android:id="@+id/ivLogo"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="50dp"
+        android:background="@drawable/mesechina3"
+        android:clickable="false" />
 
 </RelativeLayout>

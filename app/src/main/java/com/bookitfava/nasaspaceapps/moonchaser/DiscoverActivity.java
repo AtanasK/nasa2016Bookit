@@ -85,6 +85,8 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
         myview.isRunning = false;
         try {
             myview.thread.join();
+            myview.themoon.recycle();
+            myview.background.recycle();
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -101,12 +103,10 @@ public class DiscoverActivity extends AppCompatActivity implements SensorEventLi
                     risiv.putExtras(bandl);
                     startActivity(risiv);
                     flag = false;
-                    onStop();
                 }
                 else if (flag) {
                     Intent stori = new Intent(this, StoryActivity.class);
                     startActivity(stori);
-                    onStop();
                 }
             }
             myview.x = (int) event.values[0] * 90;
